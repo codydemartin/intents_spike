@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enter Customer Info</title>
+</head>
+
+<body>
+    <form stlye="text-align:center;" action="/customer" method="POST" accept-charset="utf-8">
+        <div>
+            <label for="email">Email</label>
+            <br>
+            <input type="text" name="email" id="email" </div>
+            <br>
+            <label for="name">Name</label>
+            <br>
+            <input type="text" name="name" id="name" </div>
+            <button type="submit">Create Intent</button>
+    </form>
+</body>
+
+</html>

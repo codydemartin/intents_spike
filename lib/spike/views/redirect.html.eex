@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enter Customer Info</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<script>
+    const stripe = Stripe('publishable key goes here')
+    const clientSecret = new URLSearchParams(window.location.search).get(
+        'setup_intent_client_secret'
+    );
+    stripe.retrieveSetupIntent(clientSecret).then(({ setupIntent }) => {
+        console.log(setupIntent)
+        paymentMethod = setupIntent.payment_method
+        customer = setupIntent.client_secret
+
+        options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                setupIntent
+            })
+        }
+        fetch("http://localhost:4001/update_customer", options)
+            .then(console.log)
+    });
+</script>
+
+<body>
+    <h1>update</h1>
+</body>
+
+</html>

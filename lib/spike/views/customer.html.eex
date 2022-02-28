@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enter Customer ID</title>
+</head>
+
+<body>
+    <form stlye="text-align:center;" action="/new_intent" method="POST" accept-charset="utf-8">
+        <div>
+            <label for="id">CUSTOMER ID</label>
+            <br>
+            <input type="text" name="id" id="id" </div>
+            <button type="submit">Create Intent</button>
+    </form>
+</body>
+
+</html>
